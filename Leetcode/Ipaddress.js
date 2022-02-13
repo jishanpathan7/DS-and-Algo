@@ -12,23 +12,40 @@
 // "192.168.123.456"
 //Output:
 // false
-
 function validateIP(ip) {
-    let ipArr = ip.split('.');
-    if(ipArr.length !== 4){
-        return false;
-    }
-    for(let i = 0; i < ipArr.length; i++){
-        if(ipArr[i] === '' || ipArr[i] === ' '){
-            return false;
-        }
-        if(Number(ipArr[i]) < 0 || Number(ipArr[i]) > 255){
-            return false;
-        }
-    }
-    return true;
-}
-console.log(validateIP('0.0.0.0'));
+	/**
+	@param ip: string
+	@return: boolean
+	*/
 
-//Time complexity: O(n)
-//Space complexity: O(1)
+	// your code goes here
+
+  const inputAsArray = ip.split('.');
+  
+  if(inputAsArray.length === 4) {
+    for(let segment of inputAsArray) {
+      if(!segment) return false;
+      
+      if(isNaN(+segment)) {
+        return false;
+      }
+      
+      if(!(+segment >= 0 && +segment <= 255)) 
+        return false; 
+      
+      if(!isDigits(segment)) return false; 
+    };
+    
+    return true;
+  }
+  
+  return false;
+}
+
+const isDigits = (segment) => {
+  for(let i = 0; i < segment.length; i++) {
+    if(isNaN(+segment[i])) return false;
+  }
+  
+  return true;
+}
