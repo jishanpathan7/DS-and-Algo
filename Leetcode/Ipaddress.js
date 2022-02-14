@@ -13,12 +13,7 @@
 //Output:
 // false
 function validateIP(ip) {
-	/**
-	@param ip: string
-	@return: boolean
-	*/
 
-	// your code goes here
 
   const inputAsArray = ip.split('.');
   
