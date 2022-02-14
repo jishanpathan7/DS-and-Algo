@@ -8,3 +8,6 @@ function power(n) {
     }
     return 'No';
 }
+
+let complexResult = 1.7665849587.toFixed(2);
+
