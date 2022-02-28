@@ -30,7 +30,7 @@ function maxDepth(root) {
     
     if(root === null){
         return 0
-    }
+    }   
     let left = maxDepth(root.left);
     let right = maxDepth(root.right);
     ans = Math.max(ans, 1+left+right);
