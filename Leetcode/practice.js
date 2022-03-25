@@ -60,4 +60,3 @@ var removeMaximum = function(head) {
     temp.next = maxNode.next;
     return head;
 };
-con

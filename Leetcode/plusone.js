@@ -11,7 +11,7 @@
 function plusOne(arr) {
   var carry = 1; //for carrying the 1 to the next digit
   for(let i = arr.length-1; i >= 0; i--) {
-    console.log(arr[i]);   
+   
     //start from the last digit for the array and move backwards
     if(arr[i] + carry > 9) { //if the sum of the digit and carry is greater than 9 then we need to carry 1 to the next digit
       arr[i] = 0; //set the digit to 0
@@ -27,4 +27,4 @@ function plusOne(arr) {
   return arr; //return the array
 
 }
-console.log(plusOne([1,2,3]))
+console.log(plusOne([1,2,3,4]))

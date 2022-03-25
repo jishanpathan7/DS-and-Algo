@@ -1,14 +1,11 @@
-class Animal {
-  constructor(name) {
-    this.name = name;
-  }
-  speak() {
-    console.log(this.name + " says 'Grrrrrr'");
-  }
+let prom1 = new Promise((resolve, reject) => {
+  setTimeout(() => resolve(1), 1000)
+})
 
-  
-}
+let prom2 = new Promise((resolve, reject) => {
+  setTimeout(() => resolve(2), 500)
+})
 
-  let d = new Animal("Mitzie")
-  
-  d.speak()
+Promise.race([prom1, prom2]).then(function onComplete(results) {
+  console.log(results)
+})

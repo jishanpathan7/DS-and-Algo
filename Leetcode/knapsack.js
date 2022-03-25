@@ -4,6 +4,7 @@ function knapsack(items, capacity) {
   var value = 0;
   var weight = 0;
   var itemsCopy = items.slice();
+  console.log(itemsCopy);
   var itemsSorted = itemsCopy.sort(function(a, b) {
     return b.value / b.weight - a.value / a.weight;
   });
@@ -18,9 +19,6 @@ function knapsack(items, capacity) {
       break;
     }
   }
-  return {
-    value: value,
-    weight: weight
-  };
+  return value
 }
     console.log(knapsack([{ value: 60, weight: 10 }, { value: 100, weight: 20 } ,{value:120, weight:30}], 50));

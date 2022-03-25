@@ -11,24 +11,20 @@
 //   1 0
 //Output:
 //13
-
-const sumRootToLeaf = (root) => {
-    let sum = 0;
-    
-    const helper = (node, binary) => {
-        if(!node) return;
-        
-        if(!node.left && !node.right) {
-        sum += parseInt(binary, 2);
-        return;
-        }
-        
-        helper(node.left, binary + node.left.val);
-        helper(node.right, binary + node.right.val);
+function sumRootToLeaf(root){
+  let sum =0;
+  let binary = "";
+  function helper(node, binary){
+    if(node === null){
+      return;
     }
-    
-    helper(root, '');
-    
-    return sum;
+    binary += node.val;
+    if(node.left === null && node.right === null){
+      sum += parseInt(binary, 2);
     }
-    
+    helper(node.left, binary);
+    helper(node.right, binary);
+  }
+  helper(root, binary);
+  return sum;
+}
