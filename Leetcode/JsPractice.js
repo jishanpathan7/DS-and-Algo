@@ -31,12 +31,14 @@
 
 function spreadNews(n, e, arr) {
     let friends = new Array(n).fill(0);
+  
     let count = 0;
     for (let i = 0; i < e; i++) {
         let [a, b] = arr[i].split(' ').map(Number);
         friends[a]++;
         friends[b]++;
     }
+
     for (let i = 0; i < n; i++) {
         if (friends[i] == 0) {
             count++;

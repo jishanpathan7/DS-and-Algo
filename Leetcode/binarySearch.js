@@ -16,3 +16,6 @@ function binarySearch(arr,key) {
     return -1;
 }
 console.log(binarySearch([1, 2, 3, 4, 5], 3));
+
+//time complexity O(log n)
+//space complexity O(1)
