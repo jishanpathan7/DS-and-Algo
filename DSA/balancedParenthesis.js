@@ -55,3 +55,5 @@ function isBalanced(s) {
   }
   return stack.length === 0 ? 'YES' : 'NO';
 }
+
+console.log(isBalanced('{[()]}'));
