@@ -1,6 +1,14 @@
-
-function fib(n, memo= {}) {
-  if (n == 0 || n == 1) return n;
-  if (memo[n]) return memo[n];
-  return memo[n] = fib(n - 1, memo) + fib(n - 2, memo);
+function curry(f) {
+    return function(a) {
+        return function(b) {
+            return f(a, b);
+        };
+    }
 }
+
+
+function sum(a,b) {
+    return a+b;
+}
+let currySum = curry(sum);
+console.log(currySum(1)(2));

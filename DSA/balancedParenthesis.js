@@ -44,10 +44,13 @@ function isBalanced(s) {
   };
   for (let i = 0; i < s.length; i++) {
     let char = s[i];
+
     if (char === '{' || char === '(' || char === '[') {
       stack.push(char);
+    
     } else {
       let last = stack.pop();
+      console.log(last);
       if (map[last] !== char) {
         return 'NO';
       }
