@@ -1,44 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        /* color text before the break tag only */
-      div {
-          display: grid;
-          grid-template-columns: repeat(4, 1fr);
-            grid-gap: 20px;
-      }
-
-      @media screen and (max-width: 600px) {
-          div {
-              grid-template-columns: repeat(2, 1fr);
-          }
-      }
-          
-      
-    </style>
 </head>
+
 <body>
-   <div id="main">
-  <input type="text" id="search" placeholder="Search">
-  <button id="search_btn" onclick="getData()">Search</button>
-   </div>
+
 </body>
+
 </html>
 <script>
 
-//fetch data from the server
-const apiEndpoint = `https://restcountries.com/v3.1/all`
+// async function example
 
-async function getData() {
-    const response = await fetch(apiEndpoint)
-    const data = await response.json()
-   console.log(data)
+async function f() {
+    console.log('Async function.');
+    return Promise.resolve(1);
 }
-   
+
+f().then(function(result) {
+    console.log(result)
+});
+
+
+ 
+
+
 
 </script>
